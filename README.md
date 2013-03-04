@@ -2,7 +2,7 @@
 
 SOCKS v5 HTTP client implementation in JavaScript for Node.js.
 
-Works great for making HTTP requests through Tor (see bundled example).
+Works great for making HTTP requests through [Tor](https://www.torproject.org/) (see bundled example).
 
 ## License ##
 
