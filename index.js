@@ -3,7 +3,7 @@
  * @author Matthew Caruana Galizia <m@m.cg>
  * @license Creative Commons Attribution 3.0 Unported (CC BY 3.0)
  * @copyright Copyright (c) 2013, Matthew Caruana Galizia
- * @version 0.1.1
+ * @version 0.1.2
  * @preserve
  */
 
