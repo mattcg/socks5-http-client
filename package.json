@@ -24,7 +24,7 @@
 		}
 	],
 	"dependencies": {
-		"socks5-http-client": "0.x"
+		"socks5-client": "0.x"
 	},
 	"engines": {
 		"node": "0.x"
