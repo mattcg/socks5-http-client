@@ -1,7 +1,7 @@
 {
 	"name": "socks5-http-client",
 	"description": "SOCKS v5 HTTP client.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"main": "lib/agent.js",
 	"homepage": "https://github.com/mattcg/socks5-http-client",
 	"implements": ["CommonJS/Modules/1.0"],
