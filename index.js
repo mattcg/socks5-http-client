@@ -1,7 +1,7 @@
 /**
  * @overview
  * @author Matthew Caruana Galizia <m@m.cg>
- * @license Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+ * @license MIT
  * @copyright Copyright (c) 2013, Matthew Caruana Galizia
  * @version 0.1.4
  * @preserve
