@@ -8,4 +8,4 @@ See [socks5-https-client](https://github.com/mattcg/socks5-https-client) for an 
 
 ## License ##
 
-Copyright © 2013 [Matthew Caruana Galizia](http://twitter.com/mcaruanagalizia), licensed under the MIT license (see LICENSE)..
+Copyright © 2013 [Matthew Caruana Galizia](http://twitter.com/mcaruanagalizia), licensed under an [MIT license](http://mattcg.mit-license.org/).

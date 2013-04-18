@@ -31,7 +31,8 @@
 	},
 	"licenses": [
 		{
-			"type": "MIT"
+			"type": "MIT",
+			"url": "http://mattcg.mit-license.org/"
 		}
 	]
 }
