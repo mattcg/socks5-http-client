@@ -5,25 +5,38 @@
 var http = require('./index');
 
 var options = {
-	socksPort: 9050, // Tor
-	hostname: 'www.google.com',
+	socksPort: 9050, // Tor official port
+	hostname: 'en.wikipedia.org',
 	port: 80,
-	path: '/',
+	path: '/wiki/SOCKS',
 	method: 'GET'
 };
 
 var req = http.request(options, function(res) {
-	console.log('STATUS: ' + res.statusCode);
-	console.log('HEADERS: ' + JSON.stringify(res.headers));
+	console.log('----------- STATUS -----------');
+	console.log(res.statusCode);
+	console.log('----------- HEADERS ----------');
+	console.log(JSON.stringify(res.headers));
 	res.setEncoding('utf8');
-	res.on('data', function (chunk) {
-		console.log('BODY: ' + chunk);
+
+	// The new way, using the readable stream interface (Node >= 0.10.0):
+	res.on('readable', function() {
+		console.log('----------- CHUNK ------------');
+		console.log(res.read());
 	});
+
+	/*
+	// The old way, using 'data' listeners (Node <= 0.8.22):
+	res.on('data', function(chunk) {
+		console.log('----------- CHUNK ------------');
+		console.log(chunk);
+	});
+	*/
 });
 
 req.on('error', function(e) {
 	console.log('problem with request: ' + e.message);
 });
 
-// write data to request body
+// GET request, so end without sending any data.
 req.end();
