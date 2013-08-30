@@ -1,5 +1,7 @@
 # SOCKS5 HTTP Client #
 
+[![Build Status](https://travis-ci.org/mattcg/socks5-http-client.png?branch=master)](https://travis-ci.org/mattcg/socks5-http-client)
+
 SOCKS v5 HTTP client implementation in JavaScript for Node.js.
 
 Works great for making HTTP requests through [Tor](https://www.torproject.org/) (see bundled example).
