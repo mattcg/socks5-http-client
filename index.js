@@ -3,7 +3,6 @@
  * @author Matthew Caruana Galizia <m@m.cg>
  * @license MIT
  * @copyright Copyright (c) 2013, Matthew Caruana Galizia
- * @version 0.1.4
  * @preserve
  */
 
@@ -14,7 +13,7 @@
 var http = require('http');
 var url = require('url');
 
-var Socks5ClientHttpAgent = require('./lib/agent');
+var Socks5ClientHttpAgent = require('./lib/Agent');
 
 exports.request = function(options, cb) {
 	var agent;

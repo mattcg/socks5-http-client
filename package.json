@@ -24,6 +24,10 @@
 	"dependencies": {
 		"socks5-client": "0.x"
 	},
+	"devDependencies": {
+		"mocha": "1.x",
+		"node-socks": "0.x"
+	},
 	"engines": {
 		"node": "0.x"
 	},

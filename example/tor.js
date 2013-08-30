@@ -2,7 +2,7 @@
 
 /*jshint node:true*/
 
-var http = require('./index');
+var http = require('../');
 
 var options = {
 	socksPort: 9050, // Tor official port
