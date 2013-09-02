@@ -136,7 +136,7 @@ suite('socks5-http-client tests', function() {
 		req = http.get('http://www.example.com/');
 
 		req.setTimeout(timeout / 2);
-		req.on('timeout', function() {
+		req.once('timeout', function() {
 			done();
 		});
 
