@@ -65,6 +65,8 @@ suite('socks5-http-client tests', function() {
 
 	teardown(function(done) {
 		server.close(done);
+
+		timeout = null;
 	});
 
 	test('simple request', function(done) {
