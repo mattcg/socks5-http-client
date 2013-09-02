@@ -124,8 +124,6 @@ suite('socks5-http-client tests', function() {
 		req.on('error', function(err) {
 			assert.fail(err);
 		});
-
-		req.end();
 	});
 
 	test('timeout with on()', function(done) {
@@ -143,7 +141,5 @@ suite('socks5-http-client tests', function() {
 		req.on('error', function(err) {
 			assert.fail(err);
 		});
-
-		req.end();
 	});
 });
