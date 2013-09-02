@@ -9,7 +9,7 @@
 'use strict';
 
 /*jshint node:true*/
-/*global test, suite, setup*/
+/*global test, suite, setup, teardown*/
 
 var assert = require('assert');
 var net = require('net');
@@ -20,7 +20,7 @@ var version = process.version.substr(1).split('.');
 var readableStreams = version[0] > 0 || version[1] > 8;
 
 suite('socks5-http-client tests', function() {
-	var server;
+	var server, timeout;
 
 	this.timeout(5000);
 
@@ -31,7 +31,13 @@ suite('socks5-http-client tests', function() {
 			proxy = net.createConnection(port, address, proxyReady);
 
 			proxy.on('data', function(data) {
-				socket.write(data);
+				if (timeout) {
+					setTimeout(function() {
+						socket.write(data);
+					}, timeout);
+				} else {
+					socket.write(data);
+				}
 			});
 
 			socket.on('data', function(data) {
@@ -57,13 +63,14 @@ suite('socks5-http-client tests', function() {
 		});
 	});
 
+	teardown(function(done) {
+		server.close(done);
+	});
+
 	test('simple request', function(done) {
 		var req;
 
-		req = http.request({
-			hostname: 'www.example.com',
-			path: '/'
-		}, function(res, err) {
+		req = http.request('http://www.example.com/', function(res, err) {
 			var data = '';
 
 			assert.ifError(err);
@@ -98,6 +105,43 @@ suite('socks5-http-client tests', function() {
 		});
 
 		// GET request, so end without sending any data.
+		req.end();
+	});
+
+	test('timeout with setTimeout()', function(done) {
+		var req;
+
+		timeout = 2000;
+
+		req = http.get('http://www.example.com/');
+
+		req.setTimeout(timeout / 2, function() {
+			done();
+		});
+
+		req.on('error', function(err) {
+			assert.fail(err);
+		});
+
+		req.end();
+	});
+
+	test('timeout with on()', function(done) {
+		var req;
+
+		timeout = 2000;
+
+		req = http.get('http://www.example.com/');
+
+		req.setTimeout(timeout / 2);
+		req.on('timeout', function() {
+			done();
+		});
+
+		req.on('error', function(err) {
+			assert.fail(err);
+		});
+
 		req.end();
 	});
 });
