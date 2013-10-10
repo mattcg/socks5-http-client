@@ -4,9 +4,24 @@
 
 SOCKS v5 HTTP client implementation in JavaScript for Node.js.
 
+```js
+var shttp = require('socks5-http-client');
+
+shttp.get('http://www.google.com/', function(res) {
+	res.setEncoding('utf8');
+	res.on('readable', function() {
+		console.log(res.read()); // Log response to console.
+	});
+});
+```
+
+## Using with Tor ##
+
 Works great for making HTTP requests through [Tor](https://www.torproject.org/) (see bundled example).
 
-See [socks5-https-client](https://github.com/mattcg/socks5-https-client) for an HTTPS implementation.
+## HTTPS ##
+
+This client only provides support for making HTTP requests. See [socks5-https-client](https://github.com/mattcg/socks5-https-client) for an HTTPS implementation.
 
 ## License ##
 
