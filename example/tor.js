@@ -8,11 +8,10 @@ var options = {
 	socksPort: 9050, // Tor official port
 	hostname: 'en.wikipedia.org',
 	port: 80,
-	path: '/wiki/SOCKS',
-	method: 'GET'
+	path: '/wiki/SOCKS'
 };
 
-var req = http.request(options, function(res) {
+var req = http.get(options, function(res) {
 	var version;
 
 	console.log('----------- STATUS -----------');
@@ -42,6 +41,3 @@ var req = http.request(options, function(res) {
 req.on('error', function(e) {
 	console.log('problem with request: ' + e.message);
 });
-
-// GET request, so end without sending any data.
-req.end();
