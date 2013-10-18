@@ -15,6 +15,10 @@ shttp.get('http://www.google.com/', function(res) {
 });
 ```
 
+URLs are parsed using `url.parse`. You may also pass an options hash as the first argument to `get` or `request`.
+
+Specify the `socksHost` and `socksPort` options if your SOCKS server isn't running on `localhost:1080`. Tor runs its SOCKS server on port `9050` by default, for example.
+
 ## Using with Tor ##
 
 Works great for making HTTP requests through [Tor](https://www.torproject.org/) (see bundled example).
