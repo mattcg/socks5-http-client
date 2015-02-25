@@ -22,6 +22,10 @@ exports.request = function(options, cb) {
 		options = url.parse(options);
 	}
 
+	if (!options.port) {
+		options.port = 80;
+	}
+
 	agent = new Socks5ClientHttpAgent(options);
 	options.agent = agent;
 

@@ -113,7 +113,7 @@ suite('socks5-http-client tests', function() {
 	test('timeout with setTimeout()', function(done) {
 		var req;
 
-		timeout = 2000;
+		timeout = 2;
 
 		req = http.get('http://www.example.com/');
 
@@ -129,7 +129,7 @@ suite('socks5-http-client tests', function() {
 	test('timeout with on()', function(done) {
 		var req;
 
-		timeout = 2000;
+		timeout = 2;
 
 		req = http.get('http://www.example.com/');
 
