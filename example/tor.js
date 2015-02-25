@@ -2,42 +2,32 @@
 
 /*jshint node:true*/
 
-var http = require('../');
+var url = require('url');
+var shttp = require('../');
 
-var options = {
-	socksPort: 9050, // Tor official port
-	hostname: 'en.wikipedia.org',
-	port: 80,
-	path: '/wiki/SOCKS'
-};
+var options = url.parse(process.argv[2]);
 
-var req = http.get(options, function(res) {
-	var version;
+options.socksPort = 9050; // Tor default port.
 
-	console.log('----------- STATUS -----------');
-	console.log(res.statusCode);
-	console.log('----------- HEADERS ----------');
-	console.log(JSON.stringify(res.headers));
+var req = shttp.get(options, function(res) {
 	res.setEncoding('utf8');
 
-	version = process.version.substr(1).split('.');
-	if (version[0] > 0 || version[1] > 8) {
+	res.on('readable', function() {
+		var data = res.read();
 
-		// The new way, using the readable stream interface (Node >= 0.10.0):
-		res.on('readable', function() {
-			console.log('----------- CHUNK ------------');
-			console.log(res.read());
-		});
-	} else {
+		// Check for the end of stream signal.
+		if (null === data) {
+			process.stdout.write('\n');
+			return;
+		}
 
-		// The old way, using 'data' listeners (Node <= 0.8.22):
-		res.on('data', function(chunk) {
-			console.log('----------- CHUNK ------------');
-			console.log(chunk);
-		});
-	}
+		process.stdout.write(data);
+	});
 });
 
 req.on('error', function(e) {
-	console.log('problem with request: ' + e.message);
+	console.error('Problem with request: ' + e.message);
 });
+
+// GET request, so end without sending any data.
+req.end();

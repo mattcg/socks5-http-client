@@ -13,7 +13,7 @@
 var http = require('http');
 var url = require('url');
 
-var Socks5ClientHttpAgent = require('./lib/Agent');
+var Agent = require('./lib/Agent');
 
 exports.request = function(options, cb) {
 	var agent;
@@ -26,7 +26,7 @@ exports.request = function(options, cb) {
 		options.port = 80;
 	}
 
-	agent = new Socks5ClientHttpAgent(options);
+	agent = new Agent(options);
 	options.agent = agent;
 
 	return http.request(options, cb);

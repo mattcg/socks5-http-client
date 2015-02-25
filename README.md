@@ -21,23 +21,26 @@ Specify the `socksHost` and `socksPort` options if your SOCKS server isn't runni
 
 ## Using with Tor ##
 
-Works great for making HTTP requests through [Tor](https://www.torproject.org/) (see bundled example).
+Works great for making HTTPS requests through [Tor](https://www.torproject.org/).
+
+Make sure a Tor server is running locally and run `node example/tor http://en.wikipedia.org/wiki/SOCKS` to test.
 
 ## Using with Request ##
 
 To use with [Request](https://github.com/mikeal/request), just pass an agent instance.
 
 ```js
-var Socks5ClientHttpAgent = require('socks5-http-client/lib/Agent');
+var Agent = require('socks5-http-client/lib/Agent');
 
 request({
-	url: 'http://www.google.com/',
-	agent: new Socks5ClientHttpAgent({
+	url: 'http://en.wikipedia.org/wiki/SOCKS',
+	agentClass: Agent,
+	agentOptions: {
 		socksHost: 'my-tor-proxy-host', // Defaults to 'localhost'.
 		socksPort: 9050 // Defaults to 1080.
-	})
+	}
 }, function(err, res) {
-	console.log(res);
+	console.log(err || res.body);
 });
 ```
 
