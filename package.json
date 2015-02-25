@@ -1,7 +1,7 @@
 {
 	"name": "socks5-http-client",
 	"description": "SOCKS v5 HTTP client.",
-	"version": "0.1.6",
+	"version": "1.0.0",
 	"main": "index.js",
 	"homepage": "https://github.com/mattcg/socks5-http-client",
 	"implements": ["CommonJS/Modules/1.0"],
@@ -22,15 +22,16 @@
 		"url": "https://github.com/mattcg/socks5-http-client.git"
 	},
 	"dependencies": {
-		"socks5-client": "~0.3.4"
+		"socks5-client": "~1.0.0"
 	},
 	"devDependencies": {
-		"mocha": "1.x",
-		"node-socks": "0.x"
+		"mocha": "~2.1.0",
+		"node-socks": "~0.1.0"
 	},
 	"engines": {
-		"node": "0.x"
+		"node": ">= 0.10.0"
 	},
+	"engineStrict": true,
 	"licenses": [
 		{
 			"type": "MIT",
