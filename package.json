@@ -23,17 +23,12 @@
 		"socks5-client": "~1.0.0"
 	},
 	"devDependencies": {
-		"mocha": "~2.1.0",
+		"mocha": "~2.3.3",
 		"node-socks": "~0.1.0"
 	},
 	"engines": {
 		"node": ">= 0.10.0"
 	},
 	"engineStrict": true,
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://mattcg.mit-license.org/"
-		}
-	]
+	"license": "MIT"
 }
