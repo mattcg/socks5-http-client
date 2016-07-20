@@ -20,10 +20,10 @@
 		"url": "https://github.com/mattcg/socks5-http-client.git"
 	},
 	"dependencies": {
-		"socks5-client": "~1.1.0"
+		"socks5-client": "~1.2.0"
 	},
 	"devDependencies": {
-		"mocha": "~2.3.3",
+		"mocha": "~2.5.3",
 		"node-socks": "~0.1.0"
 	},
 	"engines": {

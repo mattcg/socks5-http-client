@@ -16,8 +16,6 @@ var url = require('url');
 var Agent = require('./lib/Agent');
 
 exports.request = function(options, cb) {
-	var agent;
-
 	if (typeof options === 'string') {
 		options = url.parse(options);
 	}
@@ -26,9 +24,7 @@ exports.request = function(options, cb) {
 		options.port = 80;
 	}
 
-	agent = new Agent(options);
-	options.agent = agent;
-
+	options.agent = new Agent(options);
 	return http.request(options, cb);
 };
 
