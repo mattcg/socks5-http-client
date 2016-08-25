@@ -7,7 +7,7 @@
 	"implements": ["CommonJS/Modules/1.0"],
 	"author": {
 		"name": "Matthew Caruana Galizia",
-		"email": "m@m.cg"
+		"email": "mattcg@gmail.com"
 	},
 	"keywords": [
 		"socks5", "socksv5", "socks", "v5", "http", "tor", "client"
@@ -27,7 +27,7 @@
 		"node-socks": "~0.1.0"
 	},
 	"engines": {
-		"node": ">= 0.10.0"
+		"node": ">= 6.4.0"
 	},
 	"engineStrict": true,
 	"license": "MIT"
