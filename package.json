@@ -23,7 +23,7 @@
 		"socks5-client": "mattcg/socks5-client"
 	},
 	"devDependencies": {
-		"mocha": "~2.5.3",
+		"mocha": "~3.1.2",
 		"node-socks": "~0.1.0"
 	},
 	"engines": {

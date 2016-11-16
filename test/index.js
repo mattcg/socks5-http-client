@@ -79,20 +79,9 @@ suite('socks5-http-client tests', function() {
 			assert.equal(res.statusCode, 200);
 
 			res.setEncoding('utf8');
-
-			if (readableStreams) {
-
-				// The new way, using the readable stream interface (Node >= 0.10.0):
-				res.on('readable', function() {
-					data += res.read();
-				});
-			} else {
-
-				// The old way, using 'data' listeners (Node <= 0.8.22):
-				res.on('data', function(chunk) {
-					data += chunk;
-				});
-			}
+			res.on('readable', function() {
+				data += res.read();
+			});
 
 			res.on('end', function() {
 				assert(-1 !== data.indexOf('<html'));
