@@ -4,13 +4,21 @@
 	"version": "1.0.2",
 	"main": "index.js",
 	"homepage": "https://github.com/mattcg/socks5-http-client",
-	"implements": ["CommonJS/Modules/1.0"],
+	"implements": [
+		"CommonJS/Modules/1.0"
+	],
 	"author": {
 		"name": "Matthew Caruana Galizia",
 		"email": "mattcg@gmail.com"
 	},
 	"keywords": [
-		"socks5", "socksv5", "socks", "v5", "http", "tor", "client"
+		"socks5",
+		"socksv5",
+		"socks",
+		"v5",
+		"http",
+		"tor",
+		"client"
 	],
 	"bugs": {
 		"url": "https://github.com/mattcg/socks5-http-client/issues"
@@ -20,11 +28,14 @@
 		"url": "https://github.com/mattcg/socks5-http-client.git"
 	},
 	"dependencies": {
-		"socks5-client": "~1.2.2"
+		"socks5-client": "^1.2.3"
 	},
 	"devDependencies": {
 		"mocha": "~3.1.2",
 		"node-socks": "~0.1.0"
+	},
+	"scripts": {
+		"test": "./node_modules/.bin/mocha --reporter dot --check-leaks --ui tdd"
 	},
 	"engines": {
 		"node": ">= 6.4.0"
