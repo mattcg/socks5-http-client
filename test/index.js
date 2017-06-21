@@ -16,9 +16,6 @@ var net = require('net');
 var socks = require('node-socks/socks.js');
 var http = require('../');
 
-var version = process.version.substr(1).split('.');
-var readableStreams = version[0] > 0 || version[1] > 8;
-
 suite('socks5-http-client tests', function() {
 	var server, timeout;
 
