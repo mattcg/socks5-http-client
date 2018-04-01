@@ -28,6 +28,8 @@ exports.request = function(options, cb) {
 	return http.request(options, cb);
 };
 
+exports.Agent = Agent;
+
 exports.get = function(options, cb) {
 	var req = exports.request(options, cb);
 
