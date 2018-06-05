@@ -28,7 +28,6 @@
 		"url": "https://github.com/mattcg/socks5-http-client.git"
 	},
 	"dependencies": {
-		"npm": "^5.8.0",
 		"socks5-client": "~1.2.6"
 	},
 	"devDependencies": {
