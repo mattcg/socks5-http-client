@@ -25,7 +25,7 @@ Specify a username and password using `socksUsername` and `socksPassword`.
 
 ## Using with Tor ##
 
-Works great for making HTTPS requests through [Tor](https://www.torproject.org/).
+Works great for making HTTP requests through [Tor](https://www.torproject.org/).
 
 Make sure a Tor server is running locally and run `node example/tor http://en.wikipedia.org/wiki/SOCKS` to test.
 
